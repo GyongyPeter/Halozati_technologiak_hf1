@@ -1,0 +1,5 @@
+// A kódolt szöveg a vonal alatt található!
+// ---------------
+Ez igy biminiti szövig.
+Ez igy biminiti szövig.
+Tiszt szövig.

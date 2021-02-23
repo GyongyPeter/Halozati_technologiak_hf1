@@ -13,19 +13,9 @@ public class IOHandler {
 	private BufferedReader inFile;
 	private String[] input = new String[100];
 
-    public IOHandler(String inputFileName) throws UnsupportedEncodingException, FileNotFoundException  {
-    	this.inFile = new BufferedReader(new InputStreamReader(new FileInputStream(inputFileName), "UTF-8"));
-    }
-
-	public void processInput() throws IOException {
-		String line = "";
-		int i = 0;
-		while ((line = this.inFile.readLine()) != null) {
-			this.input[i] = line;
-			i++;
-		}
-
-		this.inFile.close();
+	public IOHandler(String inputFileName) throws IOException  {
+		this.inFile = new BufferedReader(new InputStreamReader(new FileInputStream(inputFileName), "UTF-8"));
+		this.processInput();
 	}
 
 	public String[] getInput() {
@@ -50,5 +40,16 @@ public class IOHandler {
 				i++;
 			}
 		}
+	}
+
+	private void processInput() throws IOException {
+		String line = "";
+		int i = 0;
+		while ((line = this.inFile.readLine()) != null) {
+			this.input[i] = line;
+			i++;
+		}
+
+		this.inFile.close();
 	}
 }

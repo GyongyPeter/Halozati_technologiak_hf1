@@ -10,9 +10,8 @@ public class Encoding {
 		String[] encodedString = new String[100];
 
 		ioHandler = new IOHandler("datas.txt");
-		ioHandler.processInput();
 
-		encodedString = encoder.stringArrayToEncode(ioHandler.getInput(), 'e', 'i');
+		encodedString = encoder.stringArrayToEncode(ioHandler.getInput(), 'e', 'a');
 
 		ioHandler.writeOutput(encodedString, true);
 	}

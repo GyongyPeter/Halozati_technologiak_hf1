@@ -6,15 +6,16 @@ public class Encoder {
 		
 	}
 
-	public String[] stringArrayToEncode(String[] value, char encodeThis, char encodedKey) {
-		int i = 0;
-		String[] encodedValue = new String[100];
-		while (value[i] != null) {
-			encodedValue[i] = value[i].replace(encodeThis, encodedKey);
-			i++;
-		}
-		
-		return encodedValue;
+	public String stringToEncode(String value, char encodeThis, char encodedKey) {
+		return value.replace(encodeThis, encodedKey);
 	}
+	
+	public String stringToEncode2(String value) {
+		int s = (int)value.charAt(0);
+		s++;
+
+		return value.replace(value.charAt(0), Character.toString((char)s).charAt(0));
+	}
+
 
 }

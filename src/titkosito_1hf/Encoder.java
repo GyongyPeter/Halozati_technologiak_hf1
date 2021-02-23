@@ -6,16 +6,21 @@ public class Encoder {
 		
 	}
 
+	// Replace the given characters to given character
 	public String stringToEncode(String value, char encodeThis, char encodedKey) {
 		return value.replace(encodeThis, encodedKey);
 	}
 	
-	public String stringToEncode2(String value) {
-		int s = (int)value.charAt(0);
-		s++;
+	public String stringToEncode(String value) {
+		char[] newValue = value.toCharArray();
+		for (int i = 0; i < newValue.length; i++) {
+			if (newValue[i] != '\n') {
+				int c = (int)newValue[i];
+				c++;
+				newValue[i]= (char)c;
+			}
+		}
 
-		return value.replace(value.charAt(0), Character.toString((char)s).charAt(0));
+		return String.valueOf(newValue);
 	}
-
-
 }

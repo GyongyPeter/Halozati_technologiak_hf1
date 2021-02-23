@@ -1,3 +1,3 @@
-ez egy bemeneti szöveg.
-ez egy bemeneti szöveg.
-teszt szöveg.
+alma
+korte
+meggy

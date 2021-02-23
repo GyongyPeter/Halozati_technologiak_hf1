@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 
 public class IOHandler {
 
@@ -14,7 +13,7 @@ public class IOHandler {
 	private String input = "";
 
 	public IOHandler(String inputFileName) throws IOException  {
-		this.inFile = new BufferedReader(new InputStreamReader(new FileInputStream(inputFileName), "UTF-8"));
+		this.inFile = new BufferedReader(new InputStreamReader(new FileInputStream(inputFileName)));
 		this.processInput();
 	}
 
@@ -22,11 +21,11 @@ public class IOHandler {
 		return this.input;
 	}
 
-	public void writeOutput(String encodedValue, boolean toFile) throws FileNotFoundException, UnsupportedEncodingException {
+	public void writeOutput(String encodedValue, boolean toFile) throws FileNotFoundException {
 		if (toFile) {
-			PrintWriter writer = new PrintWriter("encodedDatas.txt", "UTF-8");
+			PrintWriter writer = new PrintWriter("encodedDatas.txt");
 			
-			writer.println("// A kódolt szöveg a vonal alatt található!");
+			writer.println("// A kodolt szoveg a vonal alatt talalhato!");
 			writer.println("// ---------------");
 			for (int i = 0; i < encodedValue.length(); i++) {
 				if (encodedValue.charAt(i) == '\n') {
